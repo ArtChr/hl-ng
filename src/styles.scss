@@ -222,6 +222,10 @@ i.text-info{
 }
 .activity-row{
   margin-bottom:1em;
+  cursor: pointer;
+  &:hover {
+    background-color: #eee;
+  }
 }
 .scrollbar{
 	height:115px;
