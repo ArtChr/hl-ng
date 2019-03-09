@@ -7,5 +7,6 @@ import { IProfile } from '../hotel';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
-  @Input() public profile: IProfile;
+  @Input()
+  public profile: IProfile;
 }

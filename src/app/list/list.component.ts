@@ -14,9 +14,9 @@ export class ListComponent {
   public currentHotel: IHotel;
 
   @Output()
-  public hotelSelected: EventEmitter<IHotel> = new EventEmitter();
+  public hotelSelected: EventEmitter<number> = new EventEmitter();
 
-  public selectHotel(hotelSelected: IHotel): void {
-    this.hotelSelected.emit(hotelSelected);
+  public selectHotel(i: number): void {
+    this.hotelSelected.emit(i);
   }
 }

@@ -1,7 +1,7 @@
 <div
-  *ngFor="let hotel of hotels"
+  *ngFor="let hotel of hotels; index as i"
   class="activity-row"
-  (click)="selectHotel(hotel)"
+  (click)="selectHotel(i)"
 >
   <div class="activity-desc">
     <h5>{{ hotel.title }}</h5>

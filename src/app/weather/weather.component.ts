@@ -7,5 +7,6 @@ import { IWeather } from '../hotel';
   styleUrls: ['./weather.component.css']
 })
 export class WeatherComponent {
-  @Input() public weather: IWeather;
+  @Input()
+  public weather: IWeather;
 }

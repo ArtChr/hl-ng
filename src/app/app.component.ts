@@ -82,7 +82,7 @@ export class AppComponent {
 
   public currentHotel: IHotel = this.hotels[0];
 
-  public selectHotel(hotel: IHotel): void {
-    this.currentHotel = hotel;
+  public selectHotel(i: number): void {
+    this.currentHotel = this.hotels[i];
   }
 }
