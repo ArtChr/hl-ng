@@ -1,3 +1,25 @@
 export interface IHotel {
-  [key: string]: any;
+  id: number;
+  title: string;
+  address: string;
+  description: string;
+  phone: string;
+  picture: string;
+  photos: string[];
+  weather: IWeather;
+  profile: IProfile;
+  stars: number;
 }
+
+export interface IWeather {
+  temperature: number;
+  water: number;
+  icon: string;
+}
+
+export interface IProfile {
+  followers: number;
+  following: number;
+  photo: string;
+}
+

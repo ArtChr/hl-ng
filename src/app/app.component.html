@@ -1,4 +1,5 @@
 <h1>Hot Weather Widget</h1>
+
 <div class="element">
   <div class="element-left">
     <div class="element-bg-img">
@@ -18,44 +19,21 @@
         <span class="line"> </span>
         <div class="activity_box">
           <div class="scrollbar" id="style-2">
-            <div *ngFor="let hotel of hotels; let i = index"
-                 class="activity-row" (click)="onRowClick(i)">
-              <div class="activity-desc">
-                <h5>{{ hotel.title }}</h5>
-                <p>{{ hotel.address }}</p>
-                <p>{{ hotel.description }}</p>
-                <h6>Tel: {{ hotel.phone }}</h6>
-              </div>
-              <div class="activity-img">
-                <ul>
-                  <li><img [src]="hotel.photos[0]" alt="" /></li>
-                  <li><img [src]="hotel.photos[1]" alt="" /></li>
-                </ul>
-              </div>
-              <div class="clear"></div>
-            </div>
+            <app-list [hotels]="hotels"
+                      [currentHotel]="currentHotel"
+                      (hotelSelected)="selectHotel($event)"></app-list>
           </div>
         </div>
       </div>
     </div>
   </div>
   <div class="element-right">
-    <app-weather [temp]="selectedHotel.weather.temperature"
-                 [waterTemp]="selectedHotel.weather.water">
-    </app-weather>
-    <app-profile [followers]="selectedHotel.profile.followers"
-                 [following]="selectedHotel.profile.following"
-                 [photo]="selectedHotel.profile.photo">
-    </app-profile>
+    <app-weather [weather]="currentHotel.weather"></app-weather>
+    <app-profile [profile]="currentHotel.profile"></app-profile>
   </div>
   <div class="clear"></div>
 </div>
-<!---728x90--->
-<div class="copy-right">
-  <p>
-    © 2015 Hot Weather Widget. All rights reserved | Design by
-    <a href="http://w3layouts.com/" target="_blank"> W3layouts </a>
-  </p>
-</div>
+
+<app-footer></app-footer>
 
 <router-outlet></router-outlet>

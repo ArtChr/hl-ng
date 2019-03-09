@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import { IHotel } from './hotel';
 
 @Component({
@@ -7,10 +7,7 @@ import { IHotel } from './hotel';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public title: string = 'hw2-adv';
-
-  public selectedHotel: IHotel;
-
+  public title: string = 'hw2';
   public hotels: IHotel[] = [
     {
       id: 0,
@@ -43,8 +40,8 @@ export class AppComponent {
       phone: '+3123456789',
       picture: 'assets/images/res.jpg',
       photos: [
-        'assets/images/res.jpg',
-        'assets/images/r1.jpg'
+        'assets/images/r1.jpg',
+        'assets/images/res.jpg'
       ],
       weather: {
         temperature: 20,
@@ -57,15 +54,35 @@ export class AppComponent {
         photo: 'assets/images/r1.jpg'
       },
       stars: 4
+    },
+    {
+      id: 2,
+      title: 'Cabana Universal',
+      address: 'Detroit',
+      description: 'Good price',
+      phone: '+380123456789',
+      picture: 'assets/images/res.jpg',
+      photos: [
+        'assets/images/res.jpg',
+        'assets/images/r1.jpg'
+      ],
+      weather: {
+        temperature: 7,
+        water: 5,
+        icon: 'sun'
+      },
+      profile: {
+        followers: 1,
+        following: 8,
+        photo: 'assets/images/1.jpg'
+      },
+      stars: 4
     }
   ];
 
-  ngOnInit(): void {
-    this.selectedHotel = this.hotels[0];
-  }
+  public currentHotel: IHotel = this.hotels[0];
 
-
-  public onRowClick(i: number): void {
-    this.selectedHotel = this.hotels[i];
+  public selectHotel(hotel: IHotel): void {
+    this.currentHotel = hotel;
   }
 }
