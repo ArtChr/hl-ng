@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IHotel } from './hotel';
+import { IHotel } from './interfaces/hotel.interface';
+import { hotels, stars } from './data';
 
 @Component({
   selector: 'app-root',
@@ -8,81 +9,28 @@ import { IHotel } from './hotel';
 })
 export class AppComponent {
   public title: string = 'hw2';
-  public hotels: IHotel[] = [
-    {
-      id: 0,
-      title: 'Universal Cabana',
-      address: 'Orlando',
-      description: 'Best one!',
-      phone: '+3242353434',
-      picture: 'assets/images/1.jpg',
-      photos: [
-        'assets/images/res.jpg',
-        'assets/images/r1.jpg'
-      ],
-      weather: {
-        temperature: 12,
-        water: 11,
-        icon: 'sun'
-      },
-      profile: {
-        followers: 112,
-        following: 11,
-        photo: 'assets/images/b1.jpg'
-      },
-      stars: 3
-    },
-    {
-      id: 1,
-      title: 'Cabana #2',
-      address: 'Florida',
-      description: 'Good price',
-      phone: '+3123456789',
-      picture: 'assets/images/res.jpg',
-      photos: [
-        'assets/images/r1.jpg',
-        'assets/images/res.jpg'
-      ],
-      weather: {
-        temperature: 20,
-        water: 17,
-        icon: 'sun'
-      },
-      profile: {
-        followers: 574,
-        following: 164,
-        photo: 'assets/images/r1.jpg'
-      },
-      stars: 4
-    },
-    {
-      id: 2,
-      title: 'Cabana Universal',
-      address: 'Detroit',
-      description: 'Good price',
-      phone: '+380123456789',
-      picture: 'assets/images/res.jpg',
-      photos: [
-        'assets/images/res.jpg',
-        'assets/images/r1.jpg'
-      ],
-      weather: {
-        temperature: 7,
-        water: 5,
-        icon: 'sun'
-      },
-      profile: {
-        followers: 1,
-        following: 8,
-        photo: 'assets/images/1.jpg'
-      },
-      stars: 4
-    }
-  ];
-
+  public hotels: IHotel[] = hotels;
+  public searchText: string;
   public currentHotel: IHotel = this.hotels[0];
+  public displayStars: number = 0;
+  public activeStar: number;
+  public stars: string[] = stars;
+  public favHotels: IHotel[];
 
   public selectHotel(id: number): void {
     this.currentHotel = this.hotels.find((el: IHotel) => el.id === id);
+  }
+
+  public search(event: Event): void {
+    this.searchText = (event.target as HTMLInputElement).value;
+  }
+
+  public clickStars(index: number): void {
+    this.activeStar = index;
+    index > 0 ? this.displayStars = index + 1 : this.displayStars = 0;
+  }
+
+  public isActive(index) {
+    return this.activeStar === index;
   }
 }

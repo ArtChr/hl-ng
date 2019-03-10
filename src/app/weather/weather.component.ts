@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IWeather } from '../hotel';
+import { IWeather } from '../interfaces/hotel.interface';
 
 @Component({
   selector: 'app-weather',

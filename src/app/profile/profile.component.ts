@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IProfile } from '../hotel';
+import { IProfile } from '../interfaces/hotel.interface';
 
 @Component({
   selector: 'app-profile',

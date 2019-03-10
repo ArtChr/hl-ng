@@ -13,7 +13,7 @@ export interface IHotel {
 
 export interface IWeather {
   temperature: number;
-  water: number;
+  wind: number;
   icon: string;
 }
 

@@ -6,7 +6,9 @@ import { AppComponent } from './app.component';
 import { WeatherComponent } from './weather/weather.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FooterComponent } from './footer/footer.component';
-import { ListComponent } from './list/list.component';
+import { ListComponent } from './hotel-list/hotel-list.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import { SortByStarsPipe } from './pipes/sort-by-stars.pipe';
 
 @NgModule({
    declarations: [
@@ -14,7 +16,9 @@ import { ListComponent } from './list/list.component';
       WeatherComponent,
       ProfileComponent,
       FooterComponent,
-      ListComponent
+      ListComponent,
+      FilterPipe,
+      SortByStarsPipe
    ],
    imports: [
       BrowserModule,
