@@ -82,7 +82,7 @@ export class AppComponent {
 
   public currentHotel: IHotel = this.hotels[0];
 
-  public selectHotel(i: number): void {
-    this.currentHotel = this.hotels[i];
+  public selectHotel(id: number): void {
+    this.currentHotel = this.hotels.find((el: IHotel) => el.id === id);
   }
 }
