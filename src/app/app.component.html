@@ -8,10 +8,11 @@
     <div class="element-left-bottom">
       <div class="ele-strip">
         <ul>
-          <li *ngFor="let star of stars; index as i; last as myLast"
-               [ngClass]="{ 'active' : isActive(i), 'anc-bor' : myLast }"
-               (click)="clickStars(i)"
-               >
+          <li
+            *ngFor="let star of stars; index as i; last as myLast"
+            [ngClass]="{ active: isActive(i), 'anc-bor': myLast }"
+            (click)="clickStars(i)"
+          >
             {{ star }}
           </li>
         </ul>
@@ -29,6 +30,7 @@
               [searchText]="searchText"
               [displayStars]="displayStars"
               (hotelSelected)="selectHotel($event)"
+              (hotelFav)="addHotelToFav($event)"
             ></app-list>
           </div>
         </div>
@@ -36,6 +38,18 @@
     </div>
   </div>
   <div class="element-right">
+    <div class="village">
+      <h3>Favorites</h3>
+      <div class="favorit_box">
+        <div class="scrollbar scrollbar_fav" id="style-2">
+            <app-favorit
+                [favHotels]="favHotels"
+                (removeHotelFav)="removeHotelFromFav($event)"
+            >
+            </app-favorit>
+        </div>
+      </div>
+    </div>
     <app-weather [weather]="currentHotel.weather"></app-weather>
     <app-profile [profile]="currentHotel.profile"></app-profile>
   </div>

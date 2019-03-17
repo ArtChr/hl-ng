@@ -236,9 +236,16 @@ i.text-info{
 	overflow-y: scroll;
        padding: 1em 1em 0em 1em;
 }
+.scrollbar_fav {
+  height:90px;
+}
 .activity_box{
   background: #fff;
   min-height: 120px;
+}
+.favorit_box {
+  background: #fff;
+  height: 100px;
 }
 #style-2::-webkit-scrollbar-track
 {
@@ -276,6 +283,7 @@ i.text-info{
   background: #fff;
   padding: 1.5em 1em;
   border-radius: 0px 0px 5px 5px;
+  margin: 0 0 20px 0;
 }
 .village h3 {
   text-align: center;
@@ -477,4 +485,7 @@ h1 {
 .activity-desc h6 {
     font-size: 12px;
 }
+}
+.list-even-row {
+  background-color: #eee;
 }

@@ -23,8 +23,15 @@ export class ListComponent {
   @Output()
   public hotelSelected: EventEmitter<number> = new EventEmitter();
 
+  @Output()
+  public hotelFav: EventEmitter<number> = new EventEmitter();
+
   public selectHotel(id: number): void {
     this.hotelSelected.emit(id);
+  }
+
+  public addHotelToFav(id: number): void {
+    this.hotelFav.emit(id);
   }
 
 }

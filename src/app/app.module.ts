@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ListComponent } from './hotel-list/hotel-list.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { SortByStarsPipe } from './pipes/sort-by-stars.pipe';
+import { FavoritComponent } from './favorit/favorit.component';
 
 @NgModule({
    declarations: [
@@ -18,7 +19,8 @@ import { SortByStarsPipe } from './pipes/sort-by-stars.pipe';
       FooterComponent,
       ListComponent,
       FilterPipe,
-      SortByStarsPipe
+      SortByStarsPipe,
+      FavoritComponent
    ],
    imports: [
       BrowserModule,
