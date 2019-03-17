@@ -30,7 +30,8 @@ export class ListComponent {
     this.hotelSelected.emit(id);
   }
 
-  public addHotelToFav(id: number): void {
+  public addHotelToFav(id: number, event: Event): void {
+    event.stopPropagation();
     this.hotelFav.emit(id);
   }
 

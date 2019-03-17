@@ -103,8 +103,8 @@ export const hotels: IHotel[] = [
       'assets/images/res.jpg'
     ],
     weather: {
-      temperature: 22,
-      wind: 18,
+      temperature: 27,
+      wind: 16,
       icon: 'sun'
     },
     profile: {
